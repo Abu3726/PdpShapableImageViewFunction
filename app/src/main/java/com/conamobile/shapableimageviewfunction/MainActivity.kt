@@ -13,8 +13,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val textView:TextView = findViewById(R.id.textView)
+        val textView2:TextView = findViewById(R.id.textView2)
 
         val text = "I would #like to do #something similar to the #Twitter app"
+        val text2 = "I would like to do something similar to the https://twitter.com app"
+
         val spannable: Spannable = SpannableString(text)
         spannable.setSpan(
             ForegroundColorSpan(Color.GREEN),
@@ -35,5 +38,14 @@ class MainActivity : AppCompatActivity() {
             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         textView.text = spannable
+
+        val spannable2: Spannable = SpannableString(text2)
+        spannable2.setSpan(
+            ForegroundColorSpan(Color.BLUE),
+            44,
+            text2.length-4,
+            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        textView2.text = spannable2
     }
 }
